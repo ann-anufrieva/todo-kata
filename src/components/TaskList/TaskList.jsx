@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Task from '../Task/Task';
 import './TaskList.css';
@@ -33,5 +34,13 @@ const TaskList = (props) => {
 
   return <ul className="todo-list">{taskElems}</ul>;
 };
+
+
+TaskList.propTypes = {
+  remove: PropTypes.func,
+  tasks: PropTypes.array,
+  setComletedTodos: PropTypes.func,
+  filter: PropTypes.array
+}
 
 export default TaskList;

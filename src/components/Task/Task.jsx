@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { formatDistanceToNow } from 'date-fns';
+import PropTypes from 'prop-types';
 
 import EditField from './EditField';
 import './Task.css';
@@ -59,4 +60,12 @@ const Task = (props) => {
     </li>
   );
 };
+
+Task.propTypes = {
+  remove: PropTypes.func,
+  taskCompleted: PropTypes.func,
+  setComletedTodos: PropTypes.func,
+  id: PropTypes.number,
+  label: PropTypes.string
+}
 export default Task;

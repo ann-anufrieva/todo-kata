@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import './NewTaskForm.css';
 
 const NewTaskForm = ({ saveTodo }) => {
@@ -18,5 +19,10 @@ const NewTaskForm = ({ saveTodo }) => {
     </form>
   );
 };
+
+
+NewTaskForm.propTypes = {
+  saveTodo: PropTypes.func
+}
 
 export default NewTaskForm;

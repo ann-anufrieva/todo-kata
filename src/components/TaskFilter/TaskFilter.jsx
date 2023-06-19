@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import './TaskFilter.css';
 
@@ -41,5 +42,10 @@ const TaskFilter = ({ changeFilter }) => {
   });
   return <ul className="filters">{filtersElems}</ul>;
 };
+
+TaskFilter.propTypes = {
+  changeFilter: PropTypes.func, 
+}
+
 
 export default TaskFilter;

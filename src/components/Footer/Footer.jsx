@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import PropTypes from "prop-types";
 import './Footer.css';
 
 import TaskFilter from '../TaskFilter/TaskFilter';
@@ -27,5 +27,17 @@ const Footer = (props) => {
     </footer>
   );
 };
+
+Footer.defaultProps = {
+  changeFilter: () => {},
+  tasks: [],
+  onClearActive: () => {}
+}
+
+Footer.propTypes = {
+  changeFilter: PropTypes.func,
+  tasks: PropTypes.array,
+  onClearActive: PropTypes.func,
+}
 
 export default Footer;
