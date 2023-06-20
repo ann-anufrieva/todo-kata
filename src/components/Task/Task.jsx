@@ -3,10 +3,12 @@ import { formatDistanceToNow } from 'date-fns';
 import PropTypes from 'prop-types';
 
 import EditField from './EditField';
+import Timer from '../Timer/Timer'
+
 import './Task.css';
 
 const Task = (props) => {
-  const { remove, taskCompleted, setComletedTodos, id, label } = props;
+  const { remove, taskCompleted, setComletedTodos, id, label, min, sec } = props;
 
   const taskDate = new Date();
 
@@ -49,8 +51,9 @@ const Task = (props) => {
           checked={taskCompleted}
         />
         <label htmlFor={`${id}__check`}>
-          <span className="description">{taskLabel}</span>
-          <span className="created">{formattedCreateTime}</span>
+          <span className="title">{taskLabel}</span>
+          <Timer  min={Number(min)} sec={Number(sec)}/>
+          <span className="description">{formattedCreateTime}</span>
         </label>
         <button className="icon icon-edit" onClick={() => setEditing(true)} />
         <button className="icon icon-destroy" onClick={() => removeTask(id)} />
@@ -66,6 +69,8 @@ Task.propTypes = {
   taskCompleted: PropTypes.func,
   setComletedTodos: PropTypes.func,
   id: PropTypes.number,
-  label: PropTypes.string
+  label: PropTypes.string,
+  min: PropTypes.number,
+  sec: PropTypes.number
 }
 export default Task;

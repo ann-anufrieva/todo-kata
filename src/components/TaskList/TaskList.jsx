@@ -40,7 +40,7 @@ TaskList.propTypes = {
   remove: PropTypes.func,
   tasks: PropTypes.array,
   setComletedTodos: PropTypes.func,
-  filter: PropTypes.array
+  filter: PropTypes.string
 }
 
 export default TaskList;
